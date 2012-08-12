@@ -1,4 +1,0 @@
-django-website
-==============
-
-django-website
