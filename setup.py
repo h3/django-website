@@ -1,9 +1,11 @@
+# -*- coding: utf-8 -*-
+
 from setuptools import setup, find_packages
 
 setup(
-    name = "website",
+    name = "{{ project_name }}",
     version = "0.0.1",
-    url = "https://github.com/h3/django-website",
+    url = "",
     license = "",
     description = "",
     author = '',
