@@ -166,6 +166,7 @@ INSTALLED_APPS = (
     'seoutils',
     'website',
     'slider',
+    'webcore.design.libs',
    #'newsly',
    #'contact_form',
    #'company',
