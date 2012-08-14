@@ -114,8 +114,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.media',
     'django.core.context_processors.static',
     'django.core.context_processors.request',
-    #"seoutils.context_processors.meta",
     'django.contrib.messages.context_processors.messages',
+    'seoutils.context_processors.meta',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -125,8 +125,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.locale.LocaleMiddleware',    
-    # Uncomment the next line for simple clickjacking protection:
-    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
 ROOT_URLCONF = '{{ project_name }}.urls'
@@ -149,18 +148,30 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-#   'django.contrib.markup',
-#   'django.contrib.humanize',
-#   'grappelli',
+    'django.contrib.markup',
+    'django.contrib.humanize',
+    'grappelli',
 #   'grappelli.dashboard',
-#   'grappellifit',
+    'grappellifit',
     'django.contrib.admin',
 #   'django.contrib.admindocs',
-#   'django_generic_flatblocks',
-#   'django_generic_flatblocks.contrib.gblocks',
-#   'frontadmin',
-#   'seoutils',
-#   'website', 
+    'django_generic_flatblocks',
+    'django_generic_flatblocks.contrib.gblocks',
+    'filebrowser',
+    'easy_thumbnails',
+    'crispy_forms',
+    'modeltranslation',
+    'django_nav',
+    'frontadmin',
+    'seoutils',
+    'website',
+   #'slider',
+   #'newsly',
+   #'contact_form',
+   #'company',
+   #'company.contrib.staff',
+   #'company.contrib.pos',
+   #'company.contrib.testimonials',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -213,12 +224,27 @@ LOGGING = {
 #handler500 = 'website.views.error_500'
 
 # easy_thumbnails: store into media/cache/ instead of polluting media/uploads/
-#THUMBNAIL_MEDIA_ROOT = os.path.join(MEDIA_ROOT, 'cache/') 
-#THUMBNAIL_MEDIA_URL = '/media/cache/'
+THUMBNAIL_MEDIA_ROOT = os.path.join(MEDIA_ROOT, 'cache/') 
+THUMBNAIL_MEDIA_URL = '/media/cache/'
 
-#FRONTADMIN_PLUGINS = [
-#    'seoutils.frontadmin_plugin',
-#]
+FRONTADMIN_PLUGINS = [
+    'seoutils.frontadmin_plugin',
+]
 
+FILEBROWSER_MEDIA_ROOT = os.path.join(MEDIA_ROOT, 'assets/')
+FILEBROWSER_MEDIA_URL = MEDIA_URL + 'assets/'
+FILEBROWSER_DIRECTORY = ''
 
+FILEBROWSER_VERSIONS = {
+    'admin_thumbnail': {'verbose_name': 'Admin Thumbnail', 'width': 60, 'height': 60, 'opts': 'crop'},
+    'thumbnail': {'verbose_name': 'Thumbnail (1 col)', 'width': 60, 'height': 60, 'opts': 'crop'},
+    'small': {'verbose_name': 'Small (2 col)', 'width': 140, 'height': '', 'opts': ''},
+    'medium': {'verbose_name': 'Medium (6col )', 'width': 460, 'height': '', 'opts': ''},
+    'big': {'verbose_name': 'Big (8 col)', 'width': 610, 'height': '', 'opts': ''},
+    'large': {'verbose_name': 'Large (9 col)', 'width': 700, 'height': '', 'opts': ''},
+}
 
+GBLOCK_GRPAPPELLI_TINYMCE = True
+NEWSLY_GRPAPPELLI_TINYMCE = True
+
+CONTACT_FORM_SAVE_TO_DB = True
