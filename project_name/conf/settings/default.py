@@ -165,7 +165,7 @@ INSTALLED_APPS = (
     'frontadmin',
     'seoutils',
     'website',
-   #'slider',
+    'slider',
    #'newsly',
    #'contact_form',
    #'company',
