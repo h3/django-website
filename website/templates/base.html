@@ -97,15 +97,13 @@
 <script src="{{ STATIC_URL }}plugins/jquery.cookie.js"></script>
 {{ block.super }}
 {# jslib "live" #}
-<div id="project-footer" class="navbar">
+<div id="project-footer">
     {% block app.footer %}{% endblock %}
-    <div class="navbar-inner">
-        <div id="copyright">
-            &copy; {% now "Y" %} {% trans "All rights reserved" %} Inovatech {% trans "Website" %}:
-            <a href="http://motion-m.ca" target="_blank" title="{% trans "Website created and maintained by Motion Média" %}">
-                <img alt="Motion Média" src="{{ STATIC_URL }}website/img/motion.png" title="Motion Média">
-            </a>
-        </div>
+    <div id="copyright">
+        &copy; {% now "Y" %} {% trans "All rights reserved" %} Inovatech {% trans "Website" %}:
+        <a href="http://motion-m.ca" target="_blank" title="{% trans "Website created and maintained by Motion Média" %}">
+            <img alt="Motion Média" src="{{ STATIC_URL }}website/img/motion.png" title="Motion Média">
+        </a>
     </div>
 </div> 
 {% endblock %}
