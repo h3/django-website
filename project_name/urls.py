@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
 
+import django_nav
+
 from django.conf.urls.defaults import *
 from django.conf import settings
 from django.contrib import admin
 
 admin.autodiscover()
+django_nav.autodiscover()
 
 urlpatterns = patterns('',
     (r'^admin/', include(admin.site.urls)),
