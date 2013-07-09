@@ -2,7 +2,7 @@
 
 from {{ project_name }}.conf.settings.dev import *
 
-DEV_SERVER = False
+DEV_SERVER = True
 DEBUG_TOOLBAR = False
 
 DISABLED_APPS = ['sentry']
